@@ -28,6 +28,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "https://maximaglerimov.github.io/angular-tour-of-heroes/",
             "optimization": {
               "scripts": true,
               "styles": {
