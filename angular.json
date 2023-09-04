@@ -10,7 +10,8 @@
       "path": ".angular/cache"
     },
     "schematicCollections": [
-      "@schematics/angular"
+      "@schematics/angular",
+      "@angular-eslint/schematics"
     ],
     "packageManager": "npm",
     "warnings": {
@@ -122,6 +123,15 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
