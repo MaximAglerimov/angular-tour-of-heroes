@@ -44,7 +44,7 @@
               "vendor": false,
               "hidden": false
             },
-            "outputPath": "dist/angular-tour-of-heroes",
+            "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
