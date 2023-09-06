@@ -53,7 +53,7 @@ describe('HeroService', () => {
     req.flush(expectedHeroes);
   });
 
-  it('#getHeroes should return hero', () => {
+  it('#getHero should return hero', () => {
     const id = 13;
     const expectedHero: Hero = HEROES[1];
 
