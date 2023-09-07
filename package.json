@@ -11,7 +11,10 @@
     "lint": "ng lint",
     "lint:fix": "ng lint --fix",
     "prettier": "npx prettier --write .",
-    "husky:install": "husky install"
+    "husky:install": "husky install",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +55,7 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.0.3",
     "prettier-eslint": "^15.0.1",
-    "typescript": "~5.1.3"
+    "typescript": "~5.1.3",
+    "cypress": "latest"
   }
 }
