@@ -4,6 +4,6 @@ describe('App', () => {
   });
 
   it('has the correct title', () => {
-    cy.title().should('equal', 'AngularTourOfHeroes_wrong');
+    cy.title().should('equal', 'AngularTourOfHeroes');
   });
 });
