@@ -42,6 +42,11 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+function navToAndVerifyUrl(target: string, urlSegment: string) {
+  cy.get('nav a').contains(target).should('exist').click();
+  cy.url().should('contain', urlSegment);
+}
+
 declare namespace Cypress {
   interface Chainable<Subject = any> {
     clickToDashboard(): () => void;
@@ -51,13 +56,11 @@ declare namespace Cypress {
 }
 
 Cypress.Commands.add('clickToDashboard', () => {
-  cy.get('nav a').contains('Dashboard').should('exist').click();
-  cy.url().should('contain', '/dashboard');
+  navToAndVerifyUrl('Dashboard', '/dashboard');
 });
 
 Cypress.Commands.add('clickToHeroes', () => {
-  cy.get('nav a').contains('Heroes').should('exist').click();
-  cy.url().should('contain', '/heroes');
+  navToAndVerifyUrl('Heroes', '/heroes');
 });
 
 Cypress.Commands.add('verifyHeroDetails', (id, name) => {

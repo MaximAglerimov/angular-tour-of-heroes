@@ -13,21 +13,25 @@ describe('Heroes', () => {
 
   it('should add hero', () => {
     cy.get('app-heroes').within(() => {
-      cy.get('ul.heroes li').last().should('not.contain.text', 'Skywalker');
+      const heroName = 'Skywalker';
 
-      cy.get('input#new-hero').should('exist').type('Skywalker');
+      cy.get('ul.heroes li').last().should('not.contain.text', heroName);
+
+      cy.get('input#new-hero').should('exist').type(heroName);
       cy.get('button.add-button').contains('Add hero').should('exist').click();
 
-      cy.get('ul.heroes li').last().should('contain.text', 'Skywalker');
+      cy.get('ul.heroes li').last().should('contain.text', heroName);
     });
   });
 
   it('should remove hero', () => {
     cy.get('app-heroes').within(() => {
+      const heroName = 'Dr. Nice';
+
       cy.get('ul.heroes li')
         .and('have.length', 9)
         .first()
-        .should('contain.text', 'Dr. Nice')
+        .should('contain.text', heroName)
         .within(() => {
           cy.get('button.delete').click();
         });
@@ -35,7 +39,7 @@ describe('Heroes', () => {
       cy.get('ul.heroes li')
         .should('have.length', 8)
         .first()
-        .should('not.contain.text', 'Dr. Nice');
+        .should('not.contain.text', heroName);
     });
   });
 
